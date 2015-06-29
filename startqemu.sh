@@ -13,7 +13,7 @@ detect_img_qcow2() {
 }
 
 start_qemu() {
-	qemu-system-arm -M versatilepb -cpu arm1176 -m 256 -hda /qemu/hostvol/os.qcow2 -kernel /qemu/kernel-qemu -append "root=$APPENDED_ROOTDEVICE $ADDITIONAL_BOOTPARAMS" -vnc 0.0.0.0:1,passwd
+	qemu-system-arm -M versatilepb -cpu arm1176 -m 256 -hda /qemu/hostvol/os.qcow2 -kernel /qemu/kernel-qemu -append "root=$APPENDED_ROOTDEVICE $ADDITIONAL_BOOTPARAMS" -vnc 127.0.0.1:1 "$ADDITIONAL_QEMUPARAMS"
 }
 
 start_qemu
