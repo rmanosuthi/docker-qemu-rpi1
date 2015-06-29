@@ -14,7 +14,11 @@ Does not take any parameters ATM
 
 ## VNC over SSH
 Server: do nothing
-Client: ssh root@blah -L 8901:localhost:localport
+
+Client:
+```
+ssh root@blah -L 8901:localhost:localport
+```
 
 ## Notice
 I do not take credit for the file "kernel-qemu".
