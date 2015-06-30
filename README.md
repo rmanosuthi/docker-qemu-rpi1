@@ -5,6 +5,7 @@ Emulates a Raspberry Pi
 - Prepare a folder for the container
 - Put os.qcow2 into the folder
 - Use ```MOUNT="folder" bash run.sh```
+- Bridged network: br0
 
 ## Usage
 Does not take any parameters ATM
