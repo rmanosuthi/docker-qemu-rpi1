@@ -4,4 +4,6 @@ ADD http://web.archive.org/web/20150326230511/http://xecdesign.com/downloads/lin
 ADD startqemu.sh /qemu/startqemu.sh
 RUN chmod 755 /qemu/startqemu.sh
 
+EXPOSE 5901
+
 ENTRYPOINT ["/bin/bash", "-c", "/qemu/startqemu.sh"]
