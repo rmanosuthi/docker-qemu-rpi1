@@ -19,8 +19,9 @@ The server only accepts VNC connection from localhost, meaning you have to do SS
 Server: do nothing
 
 Client:
+
 ```
-ssh root@blah -L 8901:localhost:localport
+ssh root@blah -L 5901:localhost:localport
 ```
 
 ## Ongoing features
