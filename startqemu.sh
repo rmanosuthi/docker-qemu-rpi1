@@ -21,7 +21,7 @@ verify_if_image_exists_img() {
 		:
 	else
 		echo "Image not found, exiting."
-	exit 1
+	fi
 }
 
 verify_if_image_exists_qcow2() {
@@ -29,7 +29,7 @@ verify_if_image_exists_qcow2() {
 		:
 	else
 		echo "Image not found, exiting."
-	exit 1
+       fi
 }
 
 vfimage() {
