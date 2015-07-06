@@ -1,6 +1,15 @@
 # docker-qemu-rpi1
 Emulates a Raspberry Pi
 
+## Notes
+This doesn't exactly emulate an RPi1, more like an almost-Pi machine.
+
+The emulated board is versatilepb with arm1176 (ARMv6 softfp)
+
+The RPi1 has a BCM2835 (arm1176jzf-s + VFP aka hardfp + VideoCoreIV GPU) SoC. i2c and GPIO stuffs are not emulated.
+
+I'll create a **real** Pi1 emulator later. (hint: it's on github: qemu-rpi, or search on aur.archlinux.org)
+
 ## Requirements
 - Prepare a folder for the container
 - Put os.qcow2 into the folder
@@ -11,10 +20,14 @@ Does not take any parameters ATM
 
 ## Ports
 5901 for VNC
-All ports are open
+
+How to open all Docker ports...?
 
 ## Security
 The server only accepts VNC connection from localhost, meaning you have to do SSH-tunnelling.
+
+If I manage to open all Docker ports (a la EXPOSE ALL or something) that would pose one giant vuln.
+**Don't put your private pics in the PiVM. Sure, it won't be like _that_ Apple incident, but still...**
 
 ## VNC over SSH
 Server: do nothing
