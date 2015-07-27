@@ -1,5 +1,5 @@
 # docker-qemu-rpi1
-Emulates a Raspberry Pi
+Emulates a Raspberry Pi-like machine
 
 ## Notes
 This doesn't exactly emulate an RPi1, more like an almost-Pi machine.
@@ -24,13 +24,13 @@ Does not take any parameters ATM
 How to open all Docker ports...?
 
 ## Security
-The server only accepts VNC connection from localhost, meaning you have to do SSH-tunnelling.
+Due to obvious reasons, before you connect using VNC, you must SSH-tunnel into the container.
 
-If I manage to open all Docker ports (a la EXPOSE ALL or something) that would pose one giant vuln.
-**Don't put your private pics in the PiVM. Sure, it won't be like _that_ Apple incident, but still...**
+(Explanation: QEMU provides a white/blacklist for allowed VNC clients.
+Allowing ALL IPs won't be fun, and sending frames over the Internet in "plaintext" isn't exactly a good idea.)
 
 ## VNC over SSH
-Server: do nothing
+Server: It's all set up
 
 Client:
 
@@ -39,13 +39,11 @@ ssh root@blah -L 5901:localhost:localport
 ```
 
 ## Ongoing features
-- Properly working internet
+- Properly working internet (Endless possibilities of things, creating a wrapper script will be hard)
 - CPU limit
-- ssh-copy-id so no more having to enter password everytime you connect to it
 
 ## Notice
-I do not take credit for the file "kernel-qemu".
-It is owned by ShiftPlusOne (xecdesign.com)
+The file "kernel-qemu" is owned by ShiftPlusOne (xecdesign.com)
 His website is under renovation, and won't be back up for a while.
 
 Source: http://web.archive.org/web/20150326230511/http://xecdesign.com/downloads/linux-qemu/kernel-qemu
